@@ -97,10 +97,10 @@ class HomeScreen extends StatelessWidget {
                     }),
                   ),
                   FeatureProducts(
-                      products: _controller.limitFeatureProductsModel.value
-                              .limitfeaturedProductsList ??
-                          [],
-                      ),
+                    products: _controller.limitFeatureProductsModel.value
+                            .limitfeaturedProductsList ??
+                        [],
+                  ),
                   SizedBox(height: 2.h),
                   Padding(
                     padding: EdgeInsets.only(

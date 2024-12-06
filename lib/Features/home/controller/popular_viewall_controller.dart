@@ -18,9 +18,9 @@ class PopularProductController extends GetxController {
   RxBool searchBool = false.obs;
 
   fetchPopularProduct() async {
+    print("123");
     try {
-      getPopularProducts.value =
-      (await _homeRepository.GetPopularProduct())!;
+      getPopularProducts.value = (await _homeRepository.GetPopularProduct())!;
     } catch (e) {
     } finally {
       isLoading(false); // Reset loading state regardless of success or failure

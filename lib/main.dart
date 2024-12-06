@@ -11,9 +11,7 @@ import 'package:sugar_cake/utils/routes.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    DevicePreview(
-      builder: (context) => const MyApp(),
-    ),
+    const MyApp(),
   );
 }
 

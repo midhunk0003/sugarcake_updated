@@ -50,7 +50,8 @@ class AddressSelectWidget extends StatelessWidget {
           elevation: 0,
           child: InkWell(
             onTap: () {
-              Get.to(CheckOutScreen(
+              Get.to(
+                CheckOutScreen(
                 addressas: addressas.toString(),
                 address: address.toString(),
                 floor: floor.toString(),

@@ -56,6 +56,7 @@ class HomeRepository {
 
   Future<LimitPopularProducts?> limitPopularProduct() async {
     try {
+      print("limit popular product ");
       _prefs = await SharedPreferences.getInstance();
       final token = _prefs?.getString('token');
       final userId = _prefs?.getString('userId');
@@ -63,9 +64,12 @@ class HomeRepository {
       final response = await _dio.post(
           ApiConstant.BASE_URL + "limitpopularproducts/",
           data: {"userid": userId});
+
+      print('lllllllllwwwwwwwwr : ${response}');
       if (response.statusCode == 200) {
         var data = response.data;
         var jsonString = jsonEncode(response.data);
+        print('sssssssssssss : ${jsonString}');
         return limitPopularProductsFromJson(jsonString);
       } else {
         SnackbarManager.showFailureSnackbar(
@@ -78,6 +82,7 @@ class HomeRepository {
 
   Future<LimitFeatureProducts?> limitFeatureProduct() async {
     try {
+      print("limit feature product ");
       _prefs = await SharedPreferences.getInstance();
       final token = _prefs?.getString('token');
       final userId = _prefs?.getString('userId');

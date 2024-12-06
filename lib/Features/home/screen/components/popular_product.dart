@@ -17,6 +17,7 @@ class PopularProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('1111111222222222222222 : ${products}');
     return Padding(
       padding: EdgeInsets.only(left: 2.h, right: 2.h),
       child: Container(

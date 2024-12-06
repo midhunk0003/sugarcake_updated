@@ -68,7 +68,9 @@ class CheckOutScreen extends StatelessWidget {
       isLoading.value = true; // Start loading
 
       try {
+        print("qqqqqqqqqqqqqqqq");
         final cartDetails = controller.getCartModel.value!.cartDetails!;
+        print("$cartDetails");
         final productarraylist = cartDetails.map((product) {
           return {
             "productname": product.productname ?? '',

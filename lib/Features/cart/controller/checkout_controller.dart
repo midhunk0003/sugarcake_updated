@@ -38,17 +38,18 @@ class ChekOutController extends GetxController {
           productarraylist))!;
       if (getResponseModel.value.response == 'Success') {
         SnackbarManager.showSuccessSnackbar(Get.context!, 'Success',
-            getResponseModel.value.message.toString());
+            getResponseModel.value.response.toString());
         await Get.to(SuccessScreen());
-
       } else {
-        print(getResponseModel.value.response.toString());
+        print(
+          getResponseModel.value.message.toString(),
+        );
         SnackbarManager.showWarningSnackbar(
-            Get.context!, 'failed', getResponseModel.value.response.toString());
+            Get.context!, 'failed', getResponseModel.value.message.toString());
       }
     } catch (e) {
       // Handle error
-    } finally {
+    } finally { 
       isLoading(false);
     }
   }

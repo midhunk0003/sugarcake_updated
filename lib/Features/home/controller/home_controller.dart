@@ -27,9 +27,7 @@ class HomeController extends GetxController {
 
   RxBool searchBool = false.obs;
 
-  void toggleFavoriteStatus(String isFavorite) {
-
-  }
+  void toggleFavoriteStatus(String isFavorite) {}
 
   fetchBanner() async {
     try {
@@ -63,30 +61,30 @@ class HomeController extends GetxController {
       }
     } finally {}
   }
-  fetchLimitPopularProduct() async {
-    try {
-      limitPopularProducts.value =
-      (await _homeRepository.limitPopularProduct())!;
 
+  fetchLimitPopularProduct() async {
+    print('wwwwwwwwwwwwww : ${limitPopularProducts}');
+    try {
+      print('jjjjjjjjjjjjjj : ${limitPopularProducts}');
+      limitPopularProducts.value =
+          (await _homeRepository.limitPopularProduct())!;
+      print('ppppppppppppppppp : ${limitPopularProducts}');
     } finally {}
   }
-
 
   fetchLimitFeatureProduct() async {
     try {
       limitFeatureProductsModel.value =
           (await _homeRepository.limitFeatureProduct())!;
-
+      print('ooooooooooooo : ${limitFeatureProductsModel}');
     } finally {
       isLoading(false); // Reset loading state regardless of success or failure
     }
   }
 
-
   fetchPopularProduct() async {
     try {
       getPopularProducts.value = (await _homeRepository.GetPopularProduct())!;
-
     } finally {}
   }
 

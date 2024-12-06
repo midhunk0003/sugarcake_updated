@@ -4,9 +4,11 @@
 
 import 'dart:convert';
 
-LimitFeatureProducts limitFeatureProductsFromJson(String str) => LimitFeatureProducts.fromJson(json.decode(str));
+LimitFeatureProducts limitFeatureProductsFromJson(String str) =>
+    LimitFeatureProducts.fromJson(json.decode(str));
 
-String limitFeatureProductsToJson(LimitFeatureProducts data) => json.encode(data.toJson());
+String limitFeatureProductsToJson(LimitFeatureProducts data) =>
+    json.encode(data.toJson());
 
 class LimitFeatureProducts {
   String? response;
@@ -17,15 +19,19 @@ class LimitFeatureProducts {
     this.limitfeaturedProductsList,
   });
 
-  factory LimitFeatureProducts.fromJson(Map<String, dynamic> json) => LimitFeatureProducts(
-    response: json["response"],
-    limitfeaturedProductsList: List<LimitfeaturedProductsList>.from(json["limitfeatured_products_list"].map((x) => LimitfeaturedProductsList.fromJson(x))),
-  );
+  factory LimitFeatureProducts.fromJson(Map<String, dynamic> json) =>
+      LimitFeatureProducts(
+        response: json["response"],
+        limitfeaturedProductsList: List<LimitfeaturedProductsList>.from(
+            json["limitfeatured_products_list"]
+                .map((x) => LimitfeaturedProductsList.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    "response": response,
-    "limitfeatured_products_list": List<dynamic>.from(limitfeaturedProductsList!.map((x) => x.toJson())),
-  };
+        "response": response,
+        "limitfeatured_products_list": List<dynamic>.from(
+            limitfeaturedProductsList!.map((x) => x.toJson())),
+      };
 }
 
 class LimitfeaturedProductsList {
@@ -49,25 +55,26 @@ class LimitfeaturedProductsList {
     this.rating,
   });
 
-  factory LimitfeaturedProductsList.fromJson(Map<String, dynamic> json) => LimitfeaturedProductsList(
-    productId: json["productId"],
-    productname: json["productname"],
-    price: json["price"],
-    offerprice: json["offerprice"],
-    imageurl: json["imageurl"],
-    status: json["status"],
-    iswishlist: json["iswishlist"],
-    rating: json["rating"],
-  );
+  factory LimitfeaturedProductsList.fromJson(Map<String, dynamic> json) =>
+      LimitfeaturedProductsList(
+        productId: json["productId"],
+        productname: json["productname"],
+        price: json["price"],
+        offerprice: json["offerprice"],
+        imageurl: json["imageurl"],
+        status: json["status"],
+        iswishlist: json["iswishlist"],
+        rating: json["rating"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "productId": productId,
-    "productname": productname,
-    "price": price,
-    "offerprice": offerprice,
-    "imageurl": imageurl,
-    "status": status,
-    "iswishlist": iswishlist,
-    "rating": rating,
-  };
+        "productId": productId,
+        "productname": productname,
+        "price": price,
+        "offerprice": offerprice,
+        "imageurl": imageurl,
+        "status": status,
+        "iswishlist": iswishlist,
+        "rating": rating,
+      };
 }
