@@ -68,8 +68,10 @@ class HomeController extends GetxController {
       print('jjjjjjjjjjjjjj : ${limitPopularProducts}');
       limitPopularProducts.value =
           (await _homeRepository.limitPopularProduct())!;
-      print('ppppppppppppppppp : ${limitPopularProducts}');
-    } finally {}
+      print('ppppppppppppppppp : ${limitPopularProducts.value}');
+    } finally {
+      isLoading(false);
+    }
   }
 
   fetchLimitFeatureProduct() async {

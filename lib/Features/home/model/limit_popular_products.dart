@@ -23,13 +23,13 @@ class LimitPopularProducts {
       LimitPopularProducts(
         response: json["response"],
         popularproductList: List<PopularproductList>.from(
-            json["popularproduct_list"]
+            json["popularproducts_list"]
                 .map((x) => PopularproductList.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
         "response": response,
-        "popularproduct_list":
+        "popularproducts_list":
             List<dynamic>.from(popularproductList!.map((x) => x.toJson())),
       };
 }
