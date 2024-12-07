@@ -1,8 +1,4 @@
-
-
 import 'package:flutter/material.dart';
-
-
 
 class TextFormFieldWidget extends StatelessWidget {
   final TextEditingController controller;
@@ -10,15 +6,18 @@ class TextFormFieldWidget extends StatelessWidget {
   final bool readonly;
   final TextInputType keyboardType;
   final String? Function(String?)? validator;
+  final ValueChanged<String>? onChange;
+
   // Add validator parameter
 
-    const TextFormFieldWidget({
+  const TextFormFieldWidget({
     Key? key,
     required this.controller,
     required this.hinttext,
     required this.keyboardType,
-     this.readonly = false,
-    this.validator, // Update constructor to accept validator
+    this.readonly = false,
+    this.validator,
+    this.onChange, // Update constructor to accept validator
   }) : super(key: key);
 
   @override
